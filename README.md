@@ -2,7 +2,7 @@
 Functional Imaging Compression, Denoising and Demixing
 ======================================================
 
-A pipeline to compress, denoise, and demix several types of functional imaging recordings. This repo includes:
+For now, a pipeline to compress, denoise, and demix several types of functional imaging recordings is presented here. This repo includes:
 
 - complete codes forked from [funimag](https://github.com/paninski-lab/funimag) and [TreFiDe](https://github.com/ikinsella/trefide).
 - easier setup and usage codes
