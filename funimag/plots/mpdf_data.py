@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.patches as patches
 from . import util_plot
-from .. import denoise
 
 
 def trace_characteristics(ax,
@@ -268,15 +267,15 @@ def plot_datain(ax,page_count,
             D1 = B1/A1
             cin =[D1]
             util_plot.show_img(D1,
-                             ax=ax,
-                             cbar_orientation='vertical',
-                             cbar_direction='left',
-                             cbar_size="2%",
-                             cbar_pad=0.1,
-                             plot_aspect='auto',
-                             plot_colormap=plot_colormap,
-                             cbar_ticks_number=cbar_ticks_number,
-                             cbar_enable=True)
+                               ax=ax,
+                               cbar_orientation='vertical',
+                               cbar_direction='left',
+                               cbar_size="2%",
+                               cbar_pad=0.1,
+                               plot_aspect='auto',
+                               plot_colormap=plot_colormap,
+                               cbar_ticks_number=cbar_ticks_number,
+                               cbar_enable=True)
             ax.set_title('SNR Ratio')
             ax.set_xticks([])
             ax.set_yticks([])
@@ -297,16 +296,16 @@ def plot_datain(ax,page_count,
             Y1=Y[al:au,bl:bu]
             R1=R[al:au,bl:bu]
 
-            util_plot.comparison_plot([Y1,R1],
-                                plot_show=False,
-                                plot_aspect='auto',
-                                plot_add_residual=False,
-                                plot_colormap=plot_colormap,
-                                cbar_orientation='vertical',
-                                cbar_ticks_number=cbar_ticks_number,
-                                cbar_share=True,
-                                titles_=['Raw','Residual'],
-                                axarr=ax)
+            util_plot.comparison_plot([Y1, R1],
+                                      plot_show=False,
+                                      plot_aspect='auto',
+                                      plot_add_residual=False,
+                                      plot_colormap=plot_colormap,
+                                      cbar_orientation='vertical',
+                                      cbar_ticks_number=cbar_ticks_number,
+                                      cbar_share=True,
+                                      titles_=['Raw','Residual'],
+                                      axarr=ax)
 
             for myax in ax[:2]:
                 myax.set_xticks([])
@@ -331,21 +330,21 @@ def plot_datain(ax,page_count,
             connect_mat_1, \
             unique_pix, \
             pure_pix = util_plot.extract_superpixels(Y1,
-                                                    cut_off_point=sup_cut_off_point1,
-                                                    length_cut=sup_length_cut,
-                                                    th=sup_min_threshold,
-                                                    bg=sup_background,
-                                                    residual_cut =sup_residual_cut,
-                                                    low_rank=sup_lowrank,
-                                                    hals=sup_hals)
+                                                     cut_off_point=sup_cut_off_point1,
+                                                     length_cut=sup_length_cut,
+                                                     th=sup_min_threshold,
+                                                     bg=sup_background,
+                                                     residual_cut =sup_residual_cut,
+                                                     low_rank=sup_lowrank,
+                                                     hals=sup_hals)
 
             util_plot.superpixel_plotpixel(connect_mat_1,
-                                            unique_pix,
-                                            pure_pix,
-                                            plot_aspect='auto',
-                                            plot_colormap=plot_colormap,
-                                            ax1=ax,
-                                            text=sup_text)
+                                           unique_pix,
+                                           pure_pix,
+                                           plot_aspect='auto',
+                                           plot_colormap=plot_colormap,
+                                           ax1=ax,
+                                           text=sup_text)
 
             ax.set_title('Raw\n(Cut %.1f,Len %d)'%(sup_cut_off_point1,
                                                 sup_length_cut))
@@ -353,37 +352,37 @@ def plot_datain(ax,page_count,
         elif cplot_row ==5:
             Yd1=Yd[al:au,bl:bu,:]
             connect_mat_1, unique_pix, pure_pix = util_plot.extract_superpixels(Yd1,
-                                                    cut_off_point=sup_cut_off_point2,
-                                                    length_cut=sup_length_cut,
-                                                    th=sup_min_threshold,
-                                                    bg=sup_background,
-                                                    residual_cut =sup_residual_cut,
-                                                    low_rank=sup_lowrank,
-                                                    hals=sup_hals)
+                                                                                cut_off_point=sup_cut_off_point2,
+                                                                                length_cut=sup_length_cut,
+                                                                                th=sup_min_threshold,
+                                                                                bg=sup_background,
+                                                                                residual_cut =sup_residual_cut,
+                                                                                low_rank=sup_lowrank,
+                                                                                hals=sup_hals)
 
             util_plot.superpixel_plotpixel(connect_mat_1,
-                                            unique_pix,
-                                            pure_pix,
-                                            ax1=ax,
-                                            plot_aspect='auto',
-                                            plot_colormap=plot_colormap,
-                                            text=sup_text)
+                                           unique_pix,
+                                           pure_pix,
+                                           ax1=ax,
+                                           plot_aspect='auto',
+                                           plot_colormap=plot_colormap,
+                                           text=sup_text)
             ax.set_title('Denoised\n(Cut %.1f,Len %d)'%(sup_cut_off_point2,
                                                 sup_length_cut))
         elif cplot_row == 10:
-            _=util_plot.cn_ranks_plot(ranks,
-                                    dims=dims,
-                                    cratio_tile=True,
-                                    cbar_pad=0.1,
-                                    cbar_size="3%",
-                                    nblocks=nblocks,
-                                    ax3=ax,
-                                    grid_cut=[al,au,bl,bu],
-                                    cbar_orientation='vertical',
-                                    cbar_direction='left',
-                                    plot_aspect='auto',
-                                    fig_cmap='YlGnBu',
-                                    text_en=False)
+            _= util_plot.cn_ranks_plot(ranks,
+                                       dims=dims,
+                                       cratio_tile=True,
+                                       cbar_pad=0.1,
+                                       cbar_size="3%",
+                                       nblocks=nblocks,
+                                       ax3=ax,
+                                       grid_cut=[al,au,bl,bu],
+                                       cbar_orientation='vertical',
+                                       cbar_direction='left',
+                                       plot_aspect='auto',
+                                       fig_cmap='YlGnBu',
+                                       text_en=False)
             ax.set_xticks([])
             ax.set_yticks([])
 

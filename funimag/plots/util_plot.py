@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 import cv2
-import scipy.ndimage.filters as filters
+from scipy.ndimage import filters as filters
 
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 

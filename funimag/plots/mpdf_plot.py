@@ -1,10 +1,9 @@
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
-import numpy as np
 
 from . import mpdf_data
-from ..plots import util_plot
+
 
 def pdf_write(Y,Yd,
             frame_idx=1000,
@@ -58,19 +57,19 @@ def pdf_write(Y,Yd,
             f.add_subplot(ax1)
             axs.append(ax1)
 
-        mpdf_data.plot_datain(axs,fig_number,
+        mpdf_data.plot_datain(axs, fig_number,
                               subplot_number,
-                            Y,Yd,
-                            nblocks=nblocks,
-                            ranks=ranks,
-                            list_order=list_order,
-                            frame_idx=frame_idx,
-                            pixel_coor1=pixel_coor1,
-                            pixel_coor2=pixel_coor2,
-                            trace_seg=trace_seg,
-                            zoom_box1=zoom_box1,
-                            zoom_box2=zoom_box2,
-                            plot_colormap=plot_colormap)
+                              Y, Yd,
+                              nblocks=nblocks,
+                              ranks=ranks,
+                              list_order=list_order,
+                              frame_idx=frame_idx,
+                              pixel_coor1=pixel_coor1,
+                              pixel_coor2=pixel_coor2,
+                              trace_seg=trace_seg,
+                              zoom_box1=zoom_box1,
+                              zoom_box2=zoom_box2,
+                              plot_colormap=plot_colormap)
 
     subplot_number+=1
     #---- subplot 2
@@ -86,18 +85,18 @@ def pdf_write(Y,Yd,
         ax4 = plt.Subplot(f, gs01[gs_idx, :])
         f.add_subplot(ax4)
 
-        mpdf_data.plot_datain(ax4,fig_number,subplot_number,
-                                Y,Yd,
-                                nblocks=nblocks,
-                                ranks=ranks,
-                                list_order=list_order,
-                                frame_idx=frame_idx,
-                                pixel_coor1=pixel_coor1,
-                                pixel_coor2=pixel_coor2,
-                                trace_seg=trace_seg,
-                                zoom_box1=zoom_box1,
-                                zoom_box2=zoom_box2,
-                                plot_colormap=plot_colormap)
+        mpdf_data.plot_datain(ax4, fig_number, subplot_number,
+                              Y, Yd,
+                              nblocks=nblocks,
+                              ranks=ranks,
+                              list_order=list_order,
+                              frame_idx=frame_idx,
+                              pixel_coor1=pixel_coor1,
+                              pixel_coor2=pixel_coor2,
+                              trace_seg=trace_seg,
+                              zoom_box1=zoom_box1,
+                              zoom_box2=zoom_box2,
+                              plot_colormap=plot_colormap)
 
         if gs_idx<fig_rows-1:
             ax4.set_xticks([])
@@ -143,17 +142,17 @@ def pdf_write(Y,Yd,
     mpdf_data.plot_datain(ax_arr,
                           fig_number,
                           subplot_number,
-                            Y,Yd,
-                            nblocks=nblocks,
-                            ranks=ranks,
-                            list_order=list_order,
-                            frame_idx=frame_idx,
-                            pixel_coor1=pixel_coor1,
-                            pixel_coor2=pixel_coor2,
-                            trace_seg=trace_seg,
-                            zoom_box1=zoom_box1,
-                            zoom_box2=zoom_box2,
-                            plot_colormap=plot_colormap)
+                          Y, Yd,
+                          nblocks=nblocks,
+                          ranks=ranks,
+                          list_order=list_order,
+                          frame_idx=frame_idx,
+                          pixel_coor1=pixel_coor1,
+                          pixel_coor2=pixel_coor2,
+                          trace_seg=trace_seg,
+                          zoom_box1=zoom_box1,
+                          zoom_box2=zoom_box2,
+                          plot_colormap=plot_colormap)
 
     subplot_number += 1
     
@@ -183,17 +182,17 @@ def pdf_write(Y,Yd,
         mpdf_data.plot_datain(ax1,
                               fig_number,
                               subplot_number,
-                                Y,Yd,
-                                nblocks=nblocks,
-                                ranks=ranks,
-                                list_order=list_order,
-                                frame_idx=frame_idx,
-                                pixel_coor1=pixel_coor1,
-                                pixel_coor2=pixel_coor2,
-                                trace_seg=trace_seg,
-                                zoom_box1=zoom_box1,
-                                zoom_box2=zoom_box2,
-                                plot_colormap=plot_colormap)
+                              Y, Yd,
+                              nblocks=nblocks,
+                              ranks=ranks,
+                              list_order=list_order,
+                              frame_idx=frame_idx,
+                              pixel_coor1=pixel_coor1,
+                              pixel_coor2=pixel_coor2,
+                              trace_seg=trace_seg,
+                              zoom_box1=zoom_box1,
+                              zoom_box2=zoom_box2,
+                              plot_colormap=plot_colormap)
         subplot_number +=1
 
     if False:
@@ -208,17 +207,17 @@ def pdf_write(Y,Yd,
             ax1.yaxis.set_ticks_position('right')
             ax1.set_xticklabels([])
 
-            mpdf_data.plot_datain(ax1,fig_number,subplot_number,
-                                    Y,Yd,
-                                    nblocks=nblocks,
-                                    ranks=ranks,
-                                    list_order=list_order,
-                                    frame_idx=frame_idx,
-                                    pixel_coor1=pixel_coor1,
-                                    pixel_coor2=pixel_coor2,
-                                    trace_seg=trace_seg,
-                                    zoom_box=zoom_box,
-                                    plot_colormap=plot_colormap)
+            mpdf_data.plot_datain(ax1, fig_number, subplot_number,
+                                  Y, Yd,
+                                  nblocks=nblocks,
+                                  ranks=ranks,
+                                  list_order=list_order,
+                                  frame_idx=frame_idx,
+                                  pixel_coor1=pixel_coor1,
+                                  pixel_coor2=pixel_coor2,
+                                  trace_seg=trace_seg,
+                                  zoom_box=zoom_box,
+                                  plot_colormap=plot_colormap)
             ax1.set_yticklabels([])
 
             subplot_number += 1
